@@ -44,3 +44,28 @@ WHERE Title LIKE "Toy Story _";
 Output:
 
 ![3-response](https://raw.githubusercontent.com/AleksandraPujanek/SQLrequests/main/images/3-response.png)
+
+4. Select all directors ordered ascending without duplicate (from Movie table)
+
+![2-base-table](https://github.com/AleksandraPujanek/SQLrequests/blob/main/images/4-base-table.png)
+
+```sql
+SELECT DISTINCT Director FROM movies
+ORDER BY Director;
+```
+Output:
+
+![3-response](https://github.com/AleksandraPujanek/SQLrequests/blob/main/images/4-response.png)
+
+5. Select all directors ordered ascending without duplicate (from Movie table)
+
+![2-base-table](https://github.com/AleksandraPujanek/SQLrequests/blob/main/images/4-base-table.png)
+
+```sql
+SELECT DISTINCT Director FROM movies
+ORDER BY Director;
+```
+Output:
+
+![3-response](https://github.com/AleksandraPujanek/SQLrequests/blob/main/images/4-response.png)
+
