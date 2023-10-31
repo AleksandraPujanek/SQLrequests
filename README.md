@@ -93,5 +93,21 @@ LIMIT 2 OFFSET 2;
 ```
 Output:
 
-![6-response2](https://github.com/AleksandraPujanek/SQLrequests/blob/main/images/6-response.png?raw=true)
+![6-response](https://github.com/AleksandraPujanek/SQLrequests/blob/main/images/6-response.png?raw=true)
 
+---
+
+7. List all buildings and the distinct employee roles in each building, including empty buildings (from Buildings, Employees tables)
+
+![7-base-table1](https://github.com/AleksandraPujanek/SQLrequests/blob/main/images/7-base-table1.png?raw=true)
+![7-base-table2](https://github.com/AleksandraPujanek/SQLrequests/blob/main/images/7-base-table2.png?raw=true)
+
+```sql
+SELECT DISTINCT Building_name, Role 
+FROM Buildings 
+  LEFT JOIN Employees 
+  ON Building_name = Building;
+```
+Output:
+
+![7-response](https://github.com/AleksandraPujanek/SQLrequests/blob/main/images/7-response.png?raw=true)
