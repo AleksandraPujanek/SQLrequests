@@ -132,7 +132,7 @@ Output:
 
 ---
 
-9. Find the longest time that an employee has been at the studio
+9. Find the longest time that an employee has been at the studio (from Employees table)
 
 ![9-base-table](https://github.com/AleksandraPujanek/SQLrequests/blob/main/images/9-base-table.png?raw=true)
 
@@ -153,3 +153,18 @@ FROM Employees;
 Output:
 
 ![9-response](https://github.com/AleksandraPujanek/SQLrequests/blob/main/images/9-response.png?raw=true)
+
+---
+
+10. List the total number of years employed for each role in each building (from Employees table)
+
+![9-base-table](https://github.com/AleksandraPujanek/SQLrequests/blob/main/images/9-base-table.png?raw=true)
+
+```sql
+SELECT Role, Building, SUM(Years_employed)
+  FROM Employees
+  GROUP BY Role, Building;
+```
+Output:
+
+![10-response](https://github.com/AleksandraPujanek/SQLrequests/blob/main/images/10-response.png?raw=true)
