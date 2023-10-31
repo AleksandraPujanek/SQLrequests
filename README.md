@@ -168,3 +168,20 @@ SELECT Role, Building, SUM(Years_employed)
 Output:
 
 ![10-response](https://github.com/AleksandraPujanek/SQLrequests/blob/main/images/10-response.png?raw=true)
+
+10. Find the total domestic and international sales (rounded to million $) that can be attributed to each director (from Movies, Boxoffice tables)
+
+![11-base-table1](https://github.com/AleksandraPujanek/SQLrequests/blob/main/images/11-base-table1.png?raw=true)
+![11-base-table2](https://github.com/AleksandraPujanek/SQLrequests/blob/main/images/11-base-table2.png?raw=true)
+
+```sql
+SELECT Director, ROUND(SUM(Domestic_sales+International_sales)/1000000) as Total_sale_in_mln_$
+  FROM movies
+    LEFT JOIN Boxoffice 
+    ON Movies.Id = Boxoffice.Movie_id
+    GROUP BY Director;
+```
+Output:
+
+![11-response2](https://github.com/AleksandraPujanek/SQLrequests/blob/main/images/11-response2.png?raw=true)
+
