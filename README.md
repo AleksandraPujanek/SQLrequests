@@ -106,7 +106,7 @@ Output:
 SELECT DISTINCT Building_name, Role 
 FROM Buildings 
   LEFT JOIN Employees 
-  ON Building_name = Building;
+  ON Buildings.Building_name = Employees.Building;
 ```
 Output:
 
@@ -114,18 +114,42 @@ Output:
 
 ---
 
-8. List all buildings that hold no employees (from Buildings, Employees tables)
+8. List the name of the buildings that hold no employees (from Buildings, Employees tables)
 
 ![8-base-table1](https://github.com/AleksandraPujanek/SQLrequests/blob/main/images/8-base-table1.png?raw=true)
 ![8-base-table2](https://github.com/AleksandraPujanek/SQLrequests/blob/main/images/8-base-table2.png?raw=true)
 
 ```sql
-SELECT * 
+SELECT Building_name 
 FROM Buildings
   LEFT JOIN Employees
-  ON Building_name = Building
-    WHERE Building IS Null
+  ON Buildings.Building_name = Employees.Building
+    WHERE Building IS Null;
 ```
 Output:
 
-![8-response](https://github.com/AleksandraPujanek/SQLrequests/blob/main/images/8-response.png?raw=true)
+![8-response](https://github.com/AleksandraPujanek/SQLrequests/blob/main/images/8-response2.png?raw=true)
+
+---
+
+9. Find the longest time that an employee has been at the studio
+
+![9-base-table](https://github.com/AleksandraPujanek/SQLrequests/blob/main/images/9-base-table.png?raw=true)
+
+Solution no 1
+```sql
+SELECT Years_employed as MaxYearsEmployed
+FROM employees
+  ORDER BY Years_employed DESC
+  LIMIT 1;
+```
+
+Solution no 2
+```sql
+SELECT MAX(years_employed) as MaxYearsEmployed
+FROM Employees;
+```
+
+Output:
+
+![9-response](https://github.com/AleksandraPujanek/SQLrequests/blob/main/images/9-response.png?raw=true)
