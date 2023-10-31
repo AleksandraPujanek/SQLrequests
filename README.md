@@ -32,3 +32,15 @@ AND Director <> "John Lasseter";
 Output:
 
 ![2-response](https://raw.githubusercontent.com/AleksandraPujanek/SQLrequests/main/images/2-response.png)
+
+3. Find all the Toy Story sequels released after year 2000 (from Movie table)
+
+![2-base-table](https://raw.githubusercontent.com/AleksandraPujanek/SQLrequests/main/images/2-base-table.png)
+
+```sql
+SELECT title, Year FROM movies 
+WHERE Title LIKE "Toy Story _";
+```
+Output:
+
+![3-response](https://raw.githubusercontent.com/AleksandraPujanek/SQLrequests/main/images/3-response.png)
