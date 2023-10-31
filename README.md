@@ -8,13 +8,13 @@ Repo with helpful SQL requests.
 Solution no 1
 ```sql
 SELECT Title, Year FROM Movies
-WHERE Year < 2000 OR year > 2010;
+  WHERE Year < 2000 OR year > 2010;
 ```
 
 Solution no 2
 ```sql
 SELECT Title, Year FROM Movies
-WHERE Year NOT BETWEEN 2000 AND 2010;
+  WHERE Year NOT BETWEEN 2000 AND 2010;
 ```
 Output:
 
@@ -28,8 +28,8 @@ Output:
 
 ```sql
 SELECT Title, Director FROM Movies
-WHERE Title LIKE "%Toy Story%"
-AND Director <> "John Lasseter";
+  WHERE Title LIKE "%Toy Story%"
+  AND Director <> "John Lasseter";
 ```
 Output:
 
@@ -43,7 +43,7 @@ Output:
 
 ```sql
 SELECT title, Year FROM Movies 
-WHERE Title LIKE "Toy Story _";
+  WHERE Title LIKE "Toy Story _";
 ```
 Output:
 
@@ -57,7 +57,7 @@ Output:
 
 ```sql
 SELECT DISTINCT Director FROM Movies
-ORDER BY Director;
+  ORDER BY Director;
 ```
 Output:
 
@@ -71,9 +71,9 @@ Output:
 
 ```sql
 SELECT * FROM Movies
-WHERE Year BETWEEN 1995 AND 2005
-ORDER BY Year
-LIMIT 3 OFFSET 3;
+  WHERE Year BETWEEN 1995 AND 2005
+  ORDER BY Year
+  LIMIT 3 OFFSET 3;
 ```
 Output:
 
@@ -87,9 +87,9 @@ Output:
 
 ```sql
 SELECT * FROM North_american_cities
-WHERE Country = "United States"
-ORDER BY Population DESC
-LIMIT 2 OFFSET 2;
+  WHERE Country = "United States"
+  ORDER BY Population DESC
+  LIMIT 2 OFFSET 2;
 ```
 Output:
 
@@ -99,8 +99,8 @@ Output:
 
 7. List all buildings and the distinct employee roles in each building, including empty buildings (from Buildings, Employees tables)
 
-![7-base-table1](https://github.com/AleksandraPujanek/SQLrequests/blob/main/images/7-base-table1.png?raw=true)
-![7-base-table2](https://github.com/AleksandraPujanek/SQLrequests/blob/main/images/7-base-table2.png?raw=true)
+![7-base-table1](https://github.com/AleksandraPujanek/SQLrequests/blob/main/images/7-base-table1-2.png?raw=true)
+![7-base-table2](https://github.com/AleksandraPujanek/SQLrequests/blob/main/images/7-base-table2-2.png?raw=true)
 
 ```sql
 SELECT DISTINCT Building_name, Role 
@@ -111,3 +111,21 @@ FROM Buildings
 Output:
 
 ![7-response](https://github.com/AleksandraPujanek/SQLrequests/blob/main/images/7-response.png?raw=true)
+
+---
+
+8. List all buildings that hold no employees (from Buildings, Employees tables)
+
+![8-base-table1](https://github.com/AleksandraPujanek/SQLrequests/blob/main/images/8-base-table1.png?raw=true)
+![8-base-table2](https://github.com/AleksandraPujanek/SQLrequests/blob/main/images/8-base-table2.png?raw=true)
+
+```sql
+SELECT * 
+FROM Buildings
+  LEFT JOIN Employees
+  ON Building_name = Building
+    WHERE Building IS Null
+```
+Output:
+
+![8-response](https://github.com/AleksandraPujanek/SQLrequests/blob/main/images/8-response.png?raw=true)
