@@ -264,4 +264,45 @@ Output:
 
 ![15-response](https://github.com/AleksandraPujanek/SQLrequests/blob/main/images/15-response.png?raw=true)
 
+---
+
+16. Create a table for defects.
+
+```sql
+CREATE TABLE Defects (
+    Id INTEGER PRIMARY KEY,
+    Reporter TEXT NOT NULL,
+    Summary  TEXT NOT NULL,
+    Reproduction_steps TEXT NOT NULL,
+    Expected_result  TEXT NOT NULL,
+    Actual_Result  TEXT NOT NULL,
+    Date_Time  DATETIME NOT NULL,
+    Priority  INTEGER,
+    Severity  INTEGER,
+    BA_Assessment TEXT
+);
+```
+
+---
+
+17. Add to the 'Defects' table column for Risk Assessment (Priority x Severity).
+    
+```sql
+ALTER TABLE Defects
+ADD Risk_Assessment INTEGER,
+    DEFAULT "";
+);
+```
+
+---
+
+18. Add to the 'Defects' table column for Risk Assessment (Priority x Severity).
+    
+```sql
+ALTER TABLE Defects
+ADD Risk_Assessment INTEGER,
+    DEFAULT "";
+);
+```
+
 
