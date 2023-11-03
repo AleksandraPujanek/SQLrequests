@@ -269,7 +269,7 @@ Output:
 16. Create a table for defects.
 
 ```sql
-CREATE TABLE Defects (
+CREATE TABLE IF NOT EXISTS Defects (
     Id INTEGER PRIMARY KEY,
     Reporter TEXT NOT NULL,
     Summary  TEXT NOT NULL,
@@ -281,7 +281,17 @@ CREATE TABLE Defects (
     Severity  INTEGER,
     BA_Assessment TEXT
 );
+
+INSERT INTO Defects 
+  VALUES
+    (1,"Aleksandra Pujanek","A board with name of # could not be created","Create a board with given name: #","Response Code:200 - OK, Board is created with name: #","Response Code:401 - Unauthorized","2023-10-27 10:36:47","Low","Minor","N/A"),
+    (2,"Aleksandra Pujanek","A board with name of % could not be created","Create a board with given name: %","Response Code:200 - OK, Board is created with name: %","Response Code:400 - Bad Request","2023-10-27 10:36:47","Low","Minor","N/A"),
+    (3,"Aleksandra Pujanek","A board with name of & could not be created","Create a board with given name: &","Response Code:200 - OK, Board is created with name: &","Response Code:400 - Bad Request","2023-10-27 10:36:47","Low","Minor","N/A"),
+    (4,"Aleksandra Pujanek","A board with name of + could not be created","Create a board with given name: +","Response Code:200 - OK, Board is created with name: +","Response Code:400 - Bad Request","2023-10-27 10:36:47","Low","Minor","N/A");
 ```
+Output:
+
+![16-response]()
 
 ---
 
@@ -289,20 +299,32 @@ CREATE TABLE Defects (
     
 ```sql
 ALTER TABLE Defects
-ADD Risk_Assessment INTEGER,
+  ADD Risk_Assessment INTEGER,
     DEFAULT "";
-);
 ```
 
 ---
 
-18. Add to the 'Defects' table column for Risk Assessment (Priority x Severity).
+18. Remove from 'Defects' table column for BA assessment.
     
 ```sql
 ALTER TABLE Defects
-ADD Risk_Assessment INTEGER,
-    DEFAULT "";
-);
+  DROP  BA_Assessment;
 ```
 
+---
 
+19. Rename  'Defects' table to 'Defects_phase1'.
+    
+```sql
+ALTER TABLE Defects
+  RENAME TO Defects_phase1;
+```
+
+---
+
+19. Delete  'Defects_phase1' table.
+    
+```sql
+DROP TABLE IF EXISTS Defects_phase1;
+```
