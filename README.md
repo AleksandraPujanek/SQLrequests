@@ -266,7 +266,9 @@ Output:
 
 ---
 
-16. Create a table for defects.
+16. Create a table for defects and add values for it.
+
+![16-response1](https://github.com/AleksandraPujanek/SQLrequests/blob/main/images/16-response1.png?raw=true)
 
 ```sql
 CREATE TABLE IF NOT EXISTS Defects (
@@ -281,7 +283,12 @@ CREATE TABLE IF NOT EXISTS Defects (
     Severity  INTEGER,
     BA_Assessment TEXT
 );
+```
+Output:
 
+![16-response2](https://github.com/AleksandraPujanek/SQLrequests/blob/main/images/16-response2.png?raw=true)
+
+```sql
 INSERT INTO Defects 
   VALUES
     (1,"Aleksandra Pujanek","A board with name of # could not be created","Create a board with given name: #","Response Code:200 - OK, Board is created with name: #","Response Code:401 - Unauthorized","2023-10-27 10:36:47","Low","Minor","N/A"),
@@ -291,7 +298,8 @@ INSERT INTO Defects
 ```
 Output:
 
-![16-response]()
+![16-response4](https://github.com/AleksandraPujanek/SQLrequests/blob/main/images/16-response4.png?raw=true)
+![16-response3](https://github.com/AleksandraPujanek/SQLrequests/blob/main/images/16-response3.png?raw=true)
 
 ---
 
@@ -299,9 +307,12 @@ Output:
     
 ```sql
 ALTER TABLE Defects
-  ADD Risk_Assessment INTEGER,
+  ADD Risk_Assessment INTEGER
     DEFAULT "";
 ```
+Output:
+
+![17-response](https://github.com/AleksandraPujanek/SQLrequests/blob/main/images/17-response.png?raw=true)
 
 ---
 
@@ -311,6 +322,9 @@ ALTER TABLE Defects
 ALTER TABLE Defects
   DROP  BA_Assessment;
 ```
+Output:
+
+*Unavailable to perform and present - the user in [free w3schools SQL editor](https://www.w3schools.com/sql/trysql.asp?filename=trysql_editor) is not allowed to delete columns from database*
 
 ---
 
@@ -320,11 +334,18 @@ ALTER TABLE Defects
 ALTER TABLE Defects
   RENAME TO Defects_phase1;
 ```
+Output:
+
+![19-response](https://github.com/AleksandraPujanek/SQLrequests/blob/main/images/19-response.png?raw=true)
 
 ---
 
-19. Delete  'Defects_phase1' table.
+20. Delete  'Defects_phase1' table.
     
 ```sql
 DROP TABLE IF EXISTS Defects_phase1;
 ```
+
+Output:
+
+![20-response](https://github.com/AleksandraPujanek/SQLrequests/blob/main/images/20-response.png?raw=true)
