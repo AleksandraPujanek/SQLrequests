@@ -208,7 +208,8 @@ Output:
 ![11-response2](https://github.com/AleksandraPujanek/SQLrequests/blob/main/images/12-response2.png?raw=true)
 
 ---
-13. Add new row with Toy Stary 4 movie. (from Movies, Boxoffice tables)
+
+13. Add new row with "Toy Stary 4" movie. (from Movies table)
     
 ![13-base-table1](https://github.com/AleksandraPujanek/SQLrequests/blob/main/images/13-base-table1.png?raw=true)
 
@@ -216,7 +217,7 @@ Solution no 1
 
 ```sql
 INSERT INTO Movies 
-VALUES (4,"Toy Story 4","John Lasseter", "2010", "92");
+  VALUES (4,"Toy Story 4","John Lasseter", "2010", "92");
 ```
 Output:
 
@@ -226,9 +227,30 @@ Solution no 2
 
 ```sql
 INSERT INTO Movies
-(Title, Year)
-VALUES ("Toy Story 4","2010");
+  (Title, Year)
+  VALUES ("Toy Story 4","2010");
 ```
 Output:
 
 ![13-response](https://github.com/AleksandraPujanek/SQLrequests/blob/main/images/13-response2.png?raw=true)
+
+---
+
+14. Update the information for "Toy Story 4" movie. (from Movies table)
+    
+![14-base-table](https://github.com/AleksandraPujanek/SQLrequests/blob/main/images/14-base-table.png?raw=true)
+
+Solution no 1
+
+```sql
+UPDATE Movies
+  SET Director = "John Lasseter", 
+      Length_minutes = "92"
+  WHERE Id=15;
+```
+Output:
+
+![14-response](https://github.com/AleksandraPujanek/SQLrequests/blob/main/images/14-response.png?raw=true)
+
+
+
