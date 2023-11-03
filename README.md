@@ -169,6 +169,8 @@ Output:
 
 ![10-response](https://github.com/AleksandraPujanek/SQLrequests/blob/main/images/10-response.png?raw=true)
 
+---
+
 11. Find the total domestic and international sales (rounded to million $) that can be attributed to each director (from Movies, Boxoffice tables)
 
 ![11-base-table1](https://github.com/AleksandraPujanek/SQLrequests/blob/main/images/11-base-table1.png?raw=true)
@@ -185,7 +187,9 @@ Output:
 
 ![11-response2](https://github.com/AleksandraPujanek/SQLrequests/blob/main/images/11-response2.png?raw=true)
 
-11. Find the title and director of first five highest rated movies and their total domestic and international sales bigger than 400 mln $, rounded to million $ (from Movies, Boxoffice tables)
+---
+
+12. Find the title and director of first five highest rated movies and their total domestic and international sales bigger than 400 mln $, rounded to million $ (from Movies, Boxoffice tables)
 
 ![11-base-table1](https://github.com/AleksandraPujanek/SQLrequests/blob/main/images/11-base-table1.png?raw=true)
 ![11-base-table2](https://github.com/AleksandraPujanek/SQLrequests/blob/main/images/11-base-table2.png?raw=true)
@@ -203,3 +207,28 @@ Output:
 
 ![11-response2](https://github.com/AleksandraPujanek/SQLrequests/blob/main/images/12-response2.png?raw=true)
 
+---
+13. Add new row with Toy Stary 4 movie. (from Movies, Boxoffice tables)
+    
+![13-base-table1](https://github.com/AleksandraPujanek/SQLrequests/blob/main/images/13-base-table1.png?raw=true)
+
+Solution no 1
+
+```sql
+INSERT INTO Movies 
+VALUES (4,"Toy Story 4","John Lasseter", "2010", "92");
+```
+Output:
+
+![13-response](https://github.com/AleksandraPujanek/SQLrequests/blob/main/images/13-response.png?raw=true)
+
+Solution no 2
+
+```sql
+INSERT INTO Movies
+(Title, Year)
+VALUES ("Toy Story 4","2010");
+```
+Output:
+
+![13-response](https://github.com/AleksandraPujanek/SQLrequests/blob/main/images/13-response2.png?raw=true)
