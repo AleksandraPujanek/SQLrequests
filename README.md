@@ -240,8 +240,6 @@ Output:
     
 ![14-base-table](https://github.com/AleksandraPujanek/SQLrequests/blob/main/images/14-base-table.png?raw=true)
 
-Solution no 1
-
 ```sql
 UPDATE Movies
   SET Director = "John Lasseter", 
@@ -252,5 +250,18 @@ Output:
 
 ![14-response](https://github.com/AleksandraPujanek/SQLrequests/blob/main/images/14-response.png?raw=true)
 
+---
+
+15. Delete movies released after year 2000. (from Movies table)
+    
+![15-base-table](https://github.com/AleksandraPujanek/SQLrequests/blob/main/images/15-base-table.png?raw=true)
+
+```sql
+DELETE FROM Movies 
+  WHERE Year>2000;
+```
+Output:
+
+![15-response](https://github.com/AleksandraPujanek/SQLrequests/blob/main/images/15-response.png?raw=true)
 
 
